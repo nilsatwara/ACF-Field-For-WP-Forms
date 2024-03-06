@@ -19,7 +19,7 @@ if (!class_exists('ACF_Field_For_WP_Forms_Settings')) {
 		/**
 		 * Class construct.
 		 *
-		 * @param array $settings  The settings.
+		 * @param array $settings the settings.
 		 */
 		function __construct($settings)
 		{
@@ -38,21 +38,24 @@ if (!class_exists('ACF_Field_For_WP_Forms_Settings')) {
 
 		function render_field($field)
 		{
+			$selected_values = !empty($field['value']) ? $field['value'] : array(); // Get the selected values
+			$formatData = implode(',', $selected_values);
 			$all_wp_forms = wpforms()->form->get();
-
 ?>
-			<select name="<?php echo esc_attr($field['name']); ?>" value="<?php echo esc_attr($field['value']); ?>">
+			<select name="<?php echo esc_attr($field['name']); ?>[]" multiple>
 				<option value="0"><?php echo __('Select form', 'acf-field-for-wp-forms'); ?></option>
 				<?php
 				foreach ($all_wp_forms as $form) {
 				?>
-					<option value='<?php echo esc_attr($form->ID); ?>' <?php selected($field['value'], $form->ID); ?>><?php echo esc_html($form->post_title); ?></option>
+					<option value='<?php echo esc_attr($form->ID); ?>' <?php selected(in_array($form->ID, explode(',', $formatData))); ?>><?php echo esc_html($form->post_title); ?></option>
 				<?php
 				}
 				?>
 			</select>
-		<?php
+<?php
 		}
+
+
 
 
 		/**
@@ -64,36 +67,28 @@ if (!class_exists('ACF_Field_For_WP_Forms_Settings')) {
 		 *
 		 * @return object
 		 */
-		function load_value($value, $post_id, $field) {
+		function load_value($value, $post_id, $field)
+		{
 			if (!is_admin()) {
-				$args = array(
-					'post_type'      => 'wpforms',
-					'post_status'    => 'publish',
-					'posts_per_page' => -1,
-				);
-		
-				// Query WPForms posts
-				$wp_forms_query = new WP_Query($args);
-		
-				// Check if WPForms posts are found
-				if ($wp_forms_query->have_posts()) {
-					
-					while ($wp_forms_query->have_posts()) {
-						$wp_forms_query->the_post();
-						echo $wp_forms_query->get_the_ID();
-						// Display WPForms using shortcode
-						echo do_shortcode('[wpforms id="' . get_the_ID() . '"]');
+				// Get the selected form IDs from the ACF field
+				$selected_form_ids = !empty($value) ? $value : array();
+
+				if (!empty($selected_form_ids)) {
+					// Convert array of IDs to string
+					$shortcode_content = '';
+					foreach ($selected_form_ids as $form_id) {
+						$shortcode_content .= '[wpforms id="' . $form_id . '"]';
 					}
-					// Restore original post data
-					wp_reset_postdata();
+
+					// Display the selected WPForms using shortcode
+					echo do_shortcode($shortcode_content);
 				} else {
-					echo 'No WPForms found.';
+					echo 'No WPForms selected.';
 				}
 			} else {
 				return $value;
 			}
 		}
-		
 	}
 	new ACF_Field_For_WP_Forms_Settings($this->settings);
 }

@@ -42,11 +42,11 @@ if (!class_exists('ACF_Field_For_WP_Forms')) {
 			);
 			echo $this->message;
 			// ACF plugin error message.
-			$this->message = __('<b>"%s"</b> needs <b style="color:red";>"%s"</b> to run. Please download and activate it', 'acf-field-for-wp-forms');
+			$this->message = __('<b>"%s"</b> depends on the <b style="color:red";>"%s"</b> plugin. Please install and activate it.', 'acf-field-for-wp-forms');
 			// Admin notice.
 			add_action('admin_notices', array($this, 'acf_wp_forms_check_acf_is_activate'));
 			// Plugin meta row.
-			
+
 			// If check required plugin working OR not.
 			if (!class_exists('acf') || !defined('WPFORMS_VERSION')) {
 				return;
@@ -54,7 +54,7 @@ if (!class_exists('ACF_Field_For_WP_Forms')) {
 			// Include WP Forms field type in ACF Plugin
 			add_action('acf/include_field_types', array($this, 'acf_wp_forms_include_fields'));
 
-			add_filter('acf_wp_forms_object', array($this,'get_acf_wp_forms_object'));
+			// add_filter('acf_wp_forms_object', array($this,'get_acf_wp_forms_object'));
 
 		}
 
@@ -75,14 +75,14 @@ if (!class_exists('ACF_Field_For_WP_Forms')) {
 		public function acf_wp_forms_check_acf_is_activate()
 		{
 			if (!class_exists('acf')) {
-				echo '<div class="notice notice-error is-dismissible"><p>' . wp_sprintf($this->message, 'ACF Field For WP Forms', 'Advanced Custom Fields') . '</p></div>';
+				echo '<div class="notice notice-error is-dismissible"><p>' . wp_sprintf($this->message, 'ACF Field For WPForms', 'Advanced Custom Fields') . '</p></div>';
 			} else if (!defined('WPFORMS_VERSION')) {
-				echo '<div class="notice notice-error is-dismissible"><p>' . wp_sprintf($this->message, 'ACF Field For WP Forms', 'Contact Form 7') . '</p></div>';
+				echo '<div class="notice notice-error is-dismissible"><p>' . wp_sprintf($this->message, 'ACF Field For WPForms', 'WPForms') . '</p></div>';
 			}
 		}
 
-		function get_acf_wp_forms_object() {
-			return true;
-		}
+		// function get_acf_wp_forms_object() {
+		// 	return true;
+		// }
 	}
 }

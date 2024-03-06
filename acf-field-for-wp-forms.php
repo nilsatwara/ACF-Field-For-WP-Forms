@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:     ACF Field For WP Forms
+ * Plugin Name:     ACF Field For WPForms
  * Plugin URI:      https://wordpress.org/plugins/acf-field-for-wp-forms/
  * Description:     Adds a new 'WP Forms' field to the popular Advanced Custom Fields plugin.
  * Author:          Nilesh Kanzariya
