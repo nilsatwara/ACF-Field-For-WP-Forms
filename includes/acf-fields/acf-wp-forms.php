@@ -81,7 +81,11 @@ if (!class_exists('ACF_Field_For_WP_Forms_Settings')) {
 					}
 
 					// Display the selected WPForms using shortcode
-					echo do_shortcode($shortcode_content);
+					if (is_string($shortcode_content)) {
+						echo do_shortcode($shortcode_content);
+					} else {
+						echo 'Invalid shortcode content.';
+					}
 				} else {
 					echo 'No WPForms selected.';
 				}
