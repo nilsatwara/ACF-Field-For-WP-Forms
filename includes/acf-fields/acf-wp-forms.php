@@ -24,7 +24,7 @@ if (!class_exists('ACF_Field_For_WP_Forms_Settings')) {
 		function __construct($settings)
 		{
 			$this->name = 'acf_wp_forms';
-			$this->label = __('WP Forms', 'acf-field-for-wp-forms');
+			$this->label = __('WPForms', 'acf-field-for-wp-forms');
 			$this->category = 'basic';
 			$this->settings = $settings;
 			parent::__construct();

@@ -2,7 +2,7 @@
 Contributors: Nilesh Kanzariya
 Tags: acf, wpforms, advanced custom fields, WPform, forms
 Requires at least: 4.4
-Tested up to: 6.1
+Tested up to: 6.5
 Stable tag: 1.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -35,19 +35,16 @@ This ACF field type is compatible with :
 
 This example shows how to get the value of field `field_name` from the current post.
 
-`echo get_field( 'field_name' );`
+I will guide you through the process step by step:
 
+1. Begin by ensuring that both WPForms or WPForms Lite and the ACF plugin, along with the ACF field for WPForms, are installed and activated.
 
-This example shows how to get form (contact form 7) object.
+2. Next, navigate to the ACF plugin and add a new field type called "WPForms". Configure the rules as follows: "Show this field group if page, post, post_type, options page, etc."
 
-`function get_acf_cf7_object() {
-	return true;
-}
-add_filter( 'acf_cf7_object', 'get_acf_cf7_object' );`
+3. Now, choose the forms you want to display based on the rules set earlier in the ACF plugin. Finally, click on save.
 
-= I have an idea for a great way to improve this plugin =
-
-Great! I’d love to hear from you at <a href="mailto:support@krishaweb.com">support@krishaweb.com</a>
+Incorporate the following code into your template or custom page: <?php echo get_field('field_name');?>
+4. Verify on the frontend that your form appears as expected.
 
 == Changelog ==
 
