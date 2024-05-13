@@ -21,9 +21,7 @@ require_once 'includes/class-' . basename( __FILE__ );
 /**
  * Plugin textdomain.
  */
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 
 function acf_wp_forms_textdomain() {
 	load_plugin_textdomain( 'acf-field-for-wp-forms', false, basename( dirname( __FILE__ ) ) . '/languages' );
@@ -53,3 +51,8 @@ function acf_wp_forms_init() {
 	new ACF_Field_For_WP_Forms;
 }
 add_action('plugins_loaded', 'acf_wp_forms_init' );
+
+if (!function_exists('ACF_Field_For_WPForms_admin_scripts')) {
+	include_once dirname(__FILE__)	.'/includes/acf_wp_forms_script.php'; 
+	ACF_Field_For_WPForms_admin_scripts();
+}

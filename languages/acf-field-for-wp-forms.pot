@@ -1,0 +1,53 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ACF Field For WPForms\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-13 17:38+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.9; wp-6.5.3\n"
+"X-Domain: acf-field-for-wp-forms"
+
+#: includes/class-acf-field-for-wp-forms.php:45
+#, php-format
+msgid ""
+"<b>\"%s\"</b> depends on the <b style=\"color:red\";>\"%s\"</b> plugin. "
+"Please install and activate it."
+msgstr ""
+
+#. Name of the plugin
+msgid "ACF Field For WPForms"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Adds a new 'WP Forms' field to the popular Advanced Custom Fields plugin."
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://github.com/nilsatwara"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://wordpress.org/plugins/acf-field-for-wp-forms/"
+msgstr ""
+
+#. Author of the plugin
+msgid "Nilesh Kanzariya"
+msgstr ""
+
+#: includes/acf-fields/acf-wp-forms.php:46
+msgid "Select form"
+msgstr ""
+
+#: includes/acf-fields/acf-wp-forms.php:27
+msgid "WP Forms"
+msgstr ""

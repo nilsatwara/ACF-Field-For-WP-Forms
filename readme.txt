@@ -1,31 +1,20 @@
-=== ACF Field For Contact Form 7 ===
-Contributors: dilipbheda, krishaweb
-Tags: acf, contact form 7, advanced custom fields, contact form, forms
+=== ACF Field For WPForms ===
+Contributors: Nilesh Kanzariya
+Tags: acf, wpforms, advanced custom fields, WPform, forms
 Requires at least: 4.4
 Tested up to: 6.1
 Stable tag: 1.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Adds a 'Contact Form 7' field type for the Advanced Custom Fields WordPress plugin.
+Adds a 'WPForms' field type for the Advanced Custom Fields WordPress plugin.
 
 == Description ==
 
-Adds a 'Contact Form 7' field type for the Advanced Custom Fields WordPress plugin.
+Adds a 'WPForms' field type for the Advanced Custom Fields WordPress plugin.
 
-Store one or multiple contact forms in an advanced custom field.
+Field is returned as WPForms markup.
 
-Mark one or more forms as disabled to prevent them from being selected.
-
-Field is returned as Contact Form 7 markup.
-
-== Checkout the advanced features of ACF Field For Contact Form 7 Pro: ==
-
-•   Compatible with Gutenberg block.
-•   Widgets.
-•   Theme customizer.
-
-<a rel="nofollow" href="https://store.krishaweb.com/product/acf-field-contact-form-7-pro/">Download the ACF Field For Contact Form 7 Pro</a>
 
 = Compatibility =
 
@@ -36,9 +25,9 @@ This ACF field type is compatible with :
 
 == Installation ==
 
-1. Copy the `acf-field-for-contact-form-7` folder into your `wp-content/plugins` folder.
-2. Activate the Advanced Custom Fields: Contact Form 7 Field plugin via the plugins admin page.
-3. Create a new field via ACF and select the Contact Form 7 type.
+1. Copy the `acf-field-for-wp-forms` folder into your `wp-content/plugins` folder.
+2. Activate the Advanced Custom Fields: WPForms Field plugin via the plugins admin page.
+3. Create a new field via ACF and select the WPforms.
 
 == Frequently Asked Questions ==
 
@@ -61,24 +50,6 @@ add_filter( 'acf_cf7_object', 'get_acf_cf7_object' );`
 Great! I’d love to hear from you at <a href="mailto:support@krishaweb.com">support@krishaweb.com</a>
 
 == Changelog ==
-
-= 1.6 =
-* Improve plugin notice.
-
-= 1.5 =
-* Improve plugin notice.
-
-= 1.4 =
-* Added: ACF pro option page support.
-
-= 1.3 =
-* Fixed: ACF Group field issue.
-
-= 1.2 =
-* Tested upto 5.0
-
-= 1.1 =
-* Filter added to get form object.
 
 = 1.0 =
 * Initial Release.

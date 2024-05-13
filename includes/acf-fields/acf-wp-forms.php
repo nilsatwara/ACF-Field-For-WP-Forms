@@ -41,8 +41,8 @@ if (!class_exists('ACF_Field_For_WP_Forms_Settings')) {
 			$selected_values = !empty($field['value']) ? $field['value'] : array(); // Get the selected values
 			$formatData = implode(',', $selected_values);
 			$all_wp_forms = wpforms()->form->get();
-?>
-			<select name="<?php echo esc_attr($field['name']); ?>[]" multiple>
+			?>
+			<select name="<?php echo esc_attr($field['name']); ?>[]" class="fstdropdown-select" searchdisable="false">
 				<option value="0"><?php echo __('Select form', 'acf-field-for-wp-forms'); ?></option>
 				<?php
 				foreach ($all_wp_forms as $form) {
@@ -52,10 +52,8 @@ if (!class_exists('ACF_Field_For_WP_Forms_Settings')) {
 				}
 				?>
 			</select>
-<?php
+			<?php
 		}
-
-
 
 
 		/**
